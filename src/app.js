@@ -98,8 +98,8 @@
 // });
 
 
-const express = require('express');
-const venom = require('venom-bot');
+import venom from "venom-bot";
+import express from "express";
 
 
 const app = express();
