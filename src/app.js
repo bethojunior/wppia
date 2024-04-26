@@ -154,7 +154,7 @@ const setupClient = (client) => {
 };
 
 
-function randomSession() {
+function generateRanomSession() {
   var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   var tamanho = 8;
   var newString = "";
@@ -167,12 +167,12 @@ function randomSession() {
   return newString;
 }
 
-const randomSession = randomSession();
+const randomSession = generateRanomSession();
 
 
-function start(){
-  startVenomSession(randomSession);
-  res.send(`Session ${randomSession} started.`);
+function start(sessionId){
+  startVenomSession(sessionId);
+  res.send(`Session ${sessionId} started.`);
 }
 
 
@@ -227,4 +227,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-start();
+start(randomSession);
