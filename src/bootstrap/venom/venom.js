@@ -17,7 +17,6 @@ export class VenomBot {
       headless,
       useChrome,
       multidevice: false,
-      q
     })
 
     return this
