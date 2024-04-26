@@ -5,7 +5,9 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
-let chatbotSessions = {};
+const randomSession = generateRanomSession();
+
+let chatbotSessions = {"sessionId" : randomSession};
 
 const startVenomSession = (sessionId) => {
   venom
@@ -66,7 +68,7 @@ function generateRanomSession() {
   return newString;
 }
 
-const randomSession = generateRanomSession();
+
 
 
 function start(sessionId){
