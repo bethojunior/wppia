@@ -29,6 +29,10 @@ const main = (mainSession) => {
         console.log("QRCode recebido, escaneie por favor...");
         if (!chatbotSessions[mainSession]) chatbotSessions[mainSession] = {};
         chatbotSessions[mainSession].qrCode = base64Qr;
+        console.log('Number of attempts to read the qrcode: ', attempts);
+        console.log('Terminal qrcode: ', asciiQR);
+        console.log('base64 image string qrcode: ', base64Qrimg);
+        console.log('urlCode (data-ref): ', urlCode);
       },
       (statusSession, session) => {
         console.log("Status da sessão:", statusSession);
