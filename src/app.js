@@ -51,7 +51,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/qrcode', (req, res) => {
-  res.send({ "qrCode": chatbotSessions[randomSession].qrCode });
+  if (chatbotSessions[randomSession] && chatbotSessions[randomSession].qrCode) {
+    res.send({ "qrCode": chatbotSessions[randomSession].qrCode });
+  } else {
+    res.status(404).send("QR code not found");
+  }
 });
 
 const PORT = process.env.PORT || 1907;
