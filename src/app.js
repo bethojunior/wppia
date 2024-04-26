@@ -13,7 +13,6 @@ const startVenomSession = (sessionId) => {
       sessionId,
       (base64Qr, asciiQR) => {
         console.log('QRCode recebido, escaneie por favor...');
-        // Armazenando o QR Code em base64 na sessão para acesso futuro
         if (!chatbotSessions[sessionId]) chatbotSessions[sessionId] = {};
         chatbotSessions[sessionId].qrCode = base64Qr;
       },
@@ -78,7 +77,7 @@ function start(sessionId){
 
 app.get('/', (req, res) => {
   const { sessionId } = randomSession;
-  res.send({ "qrCode": chatbotSessions[sessionId].qrCode });
+  res.send({ "qrCode": chatbotSessions[sessionId] });
 });
 
 
