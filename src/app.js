@@ -198,7 +198,6 @@ const startVenomSession = async (sessionId) => {
     venombot.onStateChange((state) => {
       if (state === "qrRead") {
         const qrCode = venombot.base64Qr;
-        if (!chatbotSessions["heghbertho"]) chatbotSessions["heghbertho"] = {};
         chatbotSessions["heghbertho"].qrCode = qrCode;
       }
     });
@@ -235,7 +234,7 @@ app.listen(PORT, () => {
 
 
 app.get('/', (req, res) => {
-  res.send({ "qrCode": chatbotSessions["heghbertho"].qrCode });
+  res.send({ "qrCode": chatbotSessions["heghbertho"] });
 });
 
 main("heghbertho");
