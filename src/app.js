@@ -7,7 +7,7 @@ app.use(express.json());
 
 const randomSession = generateRanomSession();
 
-let chatbotSessions = {"sessionId" : randomSession};
+let chatbotSessions = {};
 
 const startVenomSession = (sessionId) => {
   venom
@@ -71,9 +71,9 @@ function generateRanomSession() {
 
 
 
-function start(sessionId){
-  startVenomSession(sessionId);
-  return `Session ${sessionId} started.`;
+function start(){
+  startVenomSession(randomSession);
+  return `Session ${randomSession} started.`;
 }
 
 
