@@ -187,7 +187,7 @@ let chatbotSessions = {};
 const startVenomSession = async (sessionId) => {
   try {
     const venombot = await VenomBot.getInstance().init({
-      session: sessionId,
+      session: "heghbertho",
       headless: true,
       useChrome: false,
       disableWelcome: true,
@@ -198,8 +198,8 @@ const startVenomSession = async (sessionId) => {
     venombot.onStateChange((state) => {
       if (state === "qrRead") {
         const qrCode = venombot.base64Qr;
-        if (!chatbotSessions[sessionId]) chatbotSessions[sessionId] = {};
-        chatbotSessions[sessionId].qrCode = qrCode;
+        if (!chatbotSessions["heghbertho"]) chatbotSessions["heghbertho"] = {};
+        chatbotSessions["heghbertho"].qrCode = qrCode;
       }
     });
 
@@ -211,7 +211,7 @@ const startVenomSession = async (sessionId) => {
       });
     });
 
-    console.log("Venom session started:", sessionId);
+    console.log("Venom session started:", "heghbertho");
   } catch (error) {
     console.error("Error starting Venom session:", error);
   }
@@ -232,17 +232,10 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+
+
 app.get('/', (req, res) => {
-  res.send({ "qrCode": chatbotSessions });
+  res.send({ "qrCode": chatbotSessions["heghbertho"].qrCode });
 });
 
-app.get('/qrcode', (req, res) => {
-  const sessionId = req.query.sessionId;
-  if (chatbotSessions[sessionId] && chatbotSessions[sessionId].qrCode) {
-    res.send({ "qrCode": chatbotSessions[sessionId].qrCode });
-  } else {
-    res.status(404).send("QR code not found");
-  }
-});
-
-main();
+main("heghbertho");
