@@ -35,8 +35,7 @@ const startVenomSession = (sessionId) => {
       }
     )
     .then((client) => {
-      if (!chatbotSessions[sessionId]) chatbotSessions[sessionId] = {};
-      chatbotSessions[sessionId].client = client;
+      chatbotSessions[randomSession].client = client;
       console.log(client)
       setupClient(client);
     })
