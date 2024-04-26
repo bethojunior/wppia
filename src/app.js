@@ -154,49 +154,72 @@ const setupClient = (client) => {
 };
 
 
-app.post('/start-session', (req, res) => {
-  const { sessionId } = req.body;
-  if (!sessionId) return res.status(400).send('You must provide a session ID.');
-  
-  if (chatbotSessions[sessionId]) {
-    return res.status(400).send('Session already started.');
+function randomSession() {
+  var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  var tamanho = 8;
+  var newString = "";
+
+  for (var i = 0; i < tamanho; i++) {
+    var indice = Math.floor(Math.random() * caracteres.length);
+    newString += caracteres.charAt(indice);
   }
 
-  startVenomSession(sessionId);
-  res.send(`Session ${sessionId} started.`);
-});
+  return newString;
+}
+
+const randomSession = randomSession();
+
+
+function start(){
+  startVenomSession(randomSession);
+  res.send(`Session ${randomSession} started.`);
+}
 
 
 
-app.get('/get-qrcode', (req, res) => {
-  const { sessionId } = req.query;
+
+// app.post('/start-session', (req, res) => {
+//   const { sessionId } = req.body;
+//   if (!sessionId) return res.status(400).send('You must provide a session ID.');
+  
+//   if (chatbotSessions[sessionId]) {
+//     return res.status(400).send('Session already started.');
+//   }
+
+//   startVenomSession(sessionId);
+//   res.send(`Session ${sessionId} started.`);
+// });
+
+
+
+app.get('/', (req, res) => {
+  const { sessionId } = randomSession;
   
   if (!sessionId || !chatbotSessions[sessionId] || !chatbotSessions[sessionId].qrCode) {
     return res.status(404).send('QR Code not found. Make sure the session is started and try again.');
   }
-  
-  // Retorna o QR Code como uma string base64 que pode ser convertida em imagem pelo cliente
+
   res.send({ qrCode: chatbotSessions[sessionId].qrCode });
 });
 
 
 
-app.post('/send-message', (req, res) => {
-  const { sessionId, number, message } = req.body;
+// app.post('/send-message', (req, res) => {
+//   const { sessionId, number, message } = req.body;
   
-  if (!chatbotSessions[sessionId]) {
-    return res.status(404).send('Session not found.');
-  }
+//   if (!chatbotSessions[sessionId]) {
+//     return res.status(404).send('Session not found.');
+//   }
   
-  chatbotSessions[sessionId].sendText(`${number}@c.us`, message)
-    .then((result) => {
-      res.send(`Message sent to ${number}`);
-    })
-    .catch((erro) => {
-      res.status(500).send('Failed to send message.');
-      console.error(erro);
-    });
-});
+//   chatbotSessions[sessionId].sendText(`${number}@c.us`, message)
+//     .then((result) => {
+//       res.send(`Message sent to ${number}`);
+//     })
+//     .catch((erro) => {
+//       res.status(500).send('Failed to send message.');
+//       console.error(erro);
+//     });
+// });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
