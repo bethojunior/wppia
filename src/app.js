@@ -55,28 +55,9 @@ const setupClient = (client) => {
 };
 
 
-function generateRanomSession() {
-  var caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  var tamanho = 8;
-  var newString = "";
-
-  for (var i = 0; i < tamanho; i++) {
-    var indice = Math.floor(Math.random() * caracteres.length);
-    newString += caracteres.charAt(indice);
-  }
-
-  return newString;
-}
-
-
-function start(){
-  startVenomSession(randomSession);
-  return `Session ${randomSession} started.`;
-}
-
 
 app.get('/', (req, res) => {
-  res.send({ "qrCode": chatbotSessions[randomSession] });
+  res.send({ "qrCode": chatbotSessions });
 });
 
 app.get('/qrcode', (req, res) => {
@@ -89,4 +70,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-start(randomSession);
+startVenomSession(randomSession);
