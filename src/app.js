@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/qrcode', (req, res) => {
-  res.send({ qrCode: chatbotSessions[randomSession].qrCode });
+  res.send({ "qrCode": chatbotSessions[randomSession].qrCode });
 });
 
 const PORT = process.env.PORT || 1907;
