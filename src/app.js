@@ -78,11 +78,6 @@ function start(sessionId){
 
 app.get('/', (req, res) => {
   const { sessionId } = randomSession;
-  
-  if (!sessionId || !chatbotSessions[sessionId] || !chatbotSessions[sessionId].qrCode) {
-    return res.status(404).send('QR Code not found. Make sure the session is started and try again.');
-  }
-
   res.send({ qrCode: chatbotSessions[sessionId].qrCode });
 });
 
