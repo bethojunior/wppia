@@ -1,7 +1,6 @@
 import venom from "venom-bot";
 import express from "express";
 
-
 const app = express();
 app.use(express.json());
 
@@ -22,12 +21,6 @@ const startVenomSession = (sessionId) => {
         console.log('Status da sessão:', statusSession);
       },
       {
-        browserPathExecutable: '/usr/bin/chromium-browser',
-        headless: true,
-        devtools: false,
-        useChrome: false,
-        debug: false,
-        logQR: true,
         browserArgs: ['--no-sandbox'],
         refreshQR: 15000,
         autoClose: 60000,
@@ -35,25 +28,23 @@ const startVenomSession = (sessionId) => {
       }
     )
     .then((client) => {
-      chatbotSessions[randomSession].client = client;
-      console.log(client)
+      chatbotSessions[sessionId].client = client; // Changed to sessionId
+      console.log(client);
       setupClient(client);
     })
-    .catch((erro) => {
-      console.log(erro);
+    .catch((error) => {
+      console.log(error);
     });
 };
 
 const setupClient = (client) => {
   client.onMessage((message) => {
-    console.log("mensagem:",message)
+    console.log("mensagem:", message);
     if (message.body === 'Hi' && message.isGroupMsg === false) {
       client.sendText(message.from, 'Welcome Venom 🕷');
     }
   });
 };
-
-
 
 app.get('/', (req, res) => {
   res.send({ "qrCode": chatbotSessions });
