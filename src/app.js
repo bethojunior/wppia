@@ -22,7 +22,7 @@ const startVenomSession = (sessionId) => {
         console.log('Status da sessão:', statusSession);
       },
       {
-        browserPathExecutable: '/usr/bin/chromium-browser', // browser executable path 
+        browserPathExecutable: '/usr/bin/chromium-browser',
         headless: true,
         devtools: false,
         useChrome: false,
@@ -76,10 +76,12 @@ function start(){
 
 
 app.get('/', (req, res) => {
-  const { sessionId } = randomSession;
-  res.send({ "qrCode": chatbotSessions[sessionId] });
+  res.send({ "qrCode": chatbotSessions[randomSession] });
 });
 
+app.get('/qrcode', (req, res) => {
+  res.send({ qrCode: chatbotSessions[randomSession].qrCode });
+});
 
 const PORT = process.env.PORT || 1907;
 
