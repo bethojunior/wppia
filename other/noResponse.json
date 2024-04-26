@@ -1,0 +1,62 @@
+[
+  {
+    "pergunta": "se vender 2 galinhas, quantas galinhas restarão?",
+    "quantidade": 35,
+    "primeiro_timestamp": "2024-04-08T14:47:06.154Z",
+    "ultimo_timestamp": "2024-04-08T14:49:38.949Z"
+  },
+  {
+    "pergunta": "conhce meu app?",
+    "quantidade": 37,
+    "primeiro_timestamp": "2024-04-08T14:47:08.910Z",
+    "ultimo_timestamp": "2024-04-08T14:49:38.785Z"
+  },
+  {
+    "pergunta": "vc sabe meu nome?",
+    "quantidade": 46,
+    "primeiro_timestamp": "2024-04-08T14:47:09.360Z",
+    "ultimo_timestamp": "2024-04-08T14:49:38.060Z"
+  },
+  {
+    "pergunta": "qual a idade de Betho?",
+    "quantidade": 26,
+    "primeiro_timestamp": "2024-04-08T14:47:09.716Z",
+    "ultimo_timestamp": "2024-04-08T14:51:15.418Z"
+  },
+  {
+    "pergunta": "sabe como me chamo?",
+    "quantidade": 31,
+    "primeiro_timestamp": "2024-04-08T14:47:09.845Z",
+    "ultimo_timestamp": "2024-04-08T14:51:16.155Z"
+  },
+  {
+    "pergunta": "tenho 10 galinhas!",
+    "quantidade": 4,
+    "primeiro_timestamp": "2024-04-08T14:47:10.888Z",
+    "ultimo_timestamp": "2024-04-08T14:49:34.406Z"
+  },
+  {
+    "pergunta": "quanto custa um ovo das minhas galinhas?",
+    "quantidade": 9,
+    "primeiro_timestamp": "2024-04-08T14:47:10.987Z",
+    "ultimo_timestamp": "2024-04-08T14:49:38.738Z"
+  },
+  {
+    "pergunta": "Meu nome é Betho, sou dono do app Return, tenho 30 anos e sou programador,  das 8h as 18h, a 7 anos.",
+    "quantidade": 5,
+    "primeiro_timestamp": "2024-04-08T14:47:11.140Z",
+    "ultimo_timestamp": "2024-04-08T14:49:35.240Z"
+  },
+  {
+    "pergunta": "quanto custa 10 ovos das minhas galinhas??",
+    "quantidade": 14,
+    "primeiro_timestamp": "2024-04-08T14:47:13.104Z",
+    "ultimo_timestamp": "2024-04-08T14:49:38.365Z"
+  },
+  {
+    "pergunta": "sabia que um ovo das minhas galinhas custa 1 real, uma galinha minha pesa 2,5kg e hoje o custa 11,00 o kg.",
+    "quantidade": 3,
+    "primeiro_timestamp": "2024-04-08T14:47:13.201Z",
+    "ultimo_timestamp": "2024-04-08T14:49:35.039Z"
+  }
+]

@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String    @id @default(uuid()) @map("_id") @db.Uuid
+  name       String
+  email      String?   @unique @map("_email")
+  phone      String  
+  
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  deleted_at DateTime?
+  deleted    Boolean   @default(false)
+
+  messages   Messages[]
+}
+
+model Messages {
+  id         String    @id @default(uuid()) @map("_id")
+  message    String
+  authorId   String    @db.Uuid
+  app        String
+  author     User      @relation(fields: [authorId], references: [id])
+
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  deleted_at DateTime?
+  deleted    Boolean   @default(false)
+}
+
+model App {
+  id          String    @id @default(uuid()) @map("_id")
+  name        String    @map("_name")
+  responsible String    @map("_responsible")
+  phone       String?   @map("_phone")
+
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  deleted_at  DateTime?
+  deleted     Boolean   @default(false)
+}
+
+model Logs {
+  id      String    @id @default(uuid()) @map("_id")
+  phone   String
+  message String
+}

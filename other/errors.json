@@ -1,0 +1,94 @@
+[
+  {
+    "mensagem": {
+      "status": 429,
+      "headers": {
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "8712d03a6cad6472-GIG",
+        "connection": "keep-alive",
+        "content-length": "337",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 08 Apr 2024 14:05:38 GMT",
+        "server": "cloudflare",
+        "set-cookie": "__cf_bm=bznoVlRKdTHnxIkaAj7x1mdTGny2m.GO5mjNru6AZtc-1712585138-1.0.1.1-lLHxeDMGE8h9UShYv5i5prtUg_JM5W9EhubZBodjbkmA6IqQac8kl1OXsM38rYoMrQqvIhqjUpIxxoxNC4ugvA; path=/; expires=Mon, 08-Apr-24 14:35:38 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=rjcEBIZn1MW8jSxdjf695ki0l9nwJ6NYgA7c.EPELLs-1712585138466-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=15724800; includeSubDomains",
+        "vary": "Origin",
+        "x-request-id": "req_fd8b298f2d5a6a62b6a7233e09d093b4"
+      },
+      "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+      },
+      "code": "insufficient_quota",
+      "param": null,
+      "type": "insufficient_quota"
+    }
+  },
+  {
+    "mensagem": {
+      "status": 429,
+      "headers": {
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "8712d2c8cc2d7aa0-GIG",
+        "connection": "keep-alive",
+        "content-length": "337",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 08 Apr 2024 14:07:23 GMT",
+        "server": "cloudflare",
+        "set-cookie": "__cf_bm=JzDVcd9tCBgzwtbNkOxB9gsIGyg._pCk4RV3F8n8VOs-1712585243-1.0.1.1-S2ApEK1XLmm5zuUTbCJc08aQ0MqTryvtdJ8f9680K5tqm9M7PuAi2SuwrLSrXABpC3GR.CS_cHxZzwqEYmzjKQ; path=/; expires=Mon, 08-Apr-24 14:37:23 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=TKb5OBKmxFGym6otsec57jLHwZbwKH2ZLl0tU_UCwAE-1712585243181-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=15724800; includeSubDomains",
+        "vary": "Origin",
+        "x-request-id": "req_ad10f618f452819491569693d118b4ee"
+      },
+      "error": {
+        "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+        "type": "insufficient_quota",
+        "param": null,
+        "code": "insufficient_quota"
+      },
+      "code": "insufficient_quota",
+      "param": null,
+      "type": "insufficient_quota"
+    }
+  },
+  {
+    "mensagem": {
+      "status": 429,
+      "headers": {
+        "alt-svc": "h3=\":443\"; ma=86400",
+        "cf-cache-status": "DYNAMIC",
+        "cf-ray": "871310ac3f1664f7-GIG",
+        "connection": "keep-alive",
+        "content-length": "381",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 08 Apr 2024 14:49:38 GMT",
+        "retry-after": "1",
+        "retry-after-ms": "120",
+        "server": "cloudflare",
+        "set-cookie": "__cf_bm=p1Nj._xKTWrCII_g1j1Tb41L9qTA5FQKK7szUhftikU-1712587778-1.0.1.1-9rQu60jtB8cVw3xaJCml9Q7NyPDv0Urc0.p.fFMg2XnsZnBLYeiD2K1XmBWPzQR6HsdXxU94.vmj.YrzgTjqFg; path=/; expires=Mon, 08-Apr-24 15:19:38 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=KNgqzdumYIN.uKpLZuJSK5AJGqvpOukqq5n7VcvkoOU-1712587778110-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+        "strict-transport-security": "max-age=15724800; includeSubDomains",
+        "vary": "Origin",
+        "x-ratelimit-limit-requests": "500",
+        "x-ratelimit-limit-tokens": "450000",
+        "x-ratelimit-remaining-requests": "0",
+        "x-ratelimit-remaining-tokens": "266300",
+        "x-ratelimit-reset-requests": "59.906s",
+        "x-ratelimit-reset-tokens": "24.493s",
+        "x-request-id": "req_1e926f42f799b7b0e6055dc514eb387e"
+      },
+      "error": {
+        "message": "Rate limit reached for gpt-4-turbo-preview in organization org-aO85lmrJrV1GiVeqoOc8eKQZ on requests per min (RPM): Limit 500, Used 500, Requested 1. Please try again in 120ms. Visit https://platform.openai.com/account/rate-limits to learn more.",
+        "type": "requests",
+        "param": null,
+        "code": "rate_limit_exceeded"
+      },
+      "code": "rate_limit_exceeded",
+      "param": null,
+      "type": "requests"
+    }
+  }
+]
