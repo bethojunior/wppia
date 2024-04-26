@@ -78,7 +78,7 @@ function start(sessionId){
 
 app.get('/', (req, res) => {
   const { sessionId } = randomSession;
-  res.send({ qrCode: chatbotSessions[sessionId].qrCode });
+  res.send({ "qrCode": chatbotSessions[sessionId].qrCode });
 });
 
 
